@@ -1,12 +1,5 @@
-// var nombre = "Mumi"
-// let nombre1 = "jVitulo"
+let nombre = (prompt("¿Cual es tu nombre?"))
+let nacimiento = (prompt("¿En que año naciste?"))
+let edad = (2021 - nacimiento)
 
-// console.log (nombre)
-// console.log (nombre1)
-
-
-let numero1 = 5
-let numero2 = 6
-
-
-console.log (numero1 + numero2)
+document.write(`<h2>Bienvenidx ${nombre}!</h2><p>Tenes ${edad} años</p>`)
