@@ -2,15 +2,72 @@
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
-    
+    box-sizing: border-box;
+    font-size: 100%;
 }
-body{
-    background-color: #111111;
-    padding: 25vw;
+h1{
+    color: ghostwhite;
+    text-transform: uppercase;
 }
 h2{
-    color: #deb887;
+    color: #fff8f0;
+    margin-bottom: 15px;
 }
 p{
     color: #fff5e8;
+}
+h3{
+    color: gainsboro;
+    font-weight: 100;
+    font-size: .7rem;
+}
+body{
+    background-color: #111111;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.carnet{
+    margin-top: 5%;
+ width: max-content;
+ height: fit-content;
+ display: flex;
+ padding: 5px;
+ border: #fff5e8 1px dashed;
+ border-radius: 8px;
+}
+img{
+    margin: .5rem;
+    width: auto;
+    height: 150px;
+}
+.txt{
+    padding-right: 2rem;
+    padding-top: 1rem;
+}
+.ext{
+    color: #fad0bf;
+    font-size: 2rem;
+}
+.arg{
+    color: #a2fff3;
+    font-size: 2rem;
+}
+.men::after{
+    content: 'MENOR';   
+    font-weight: 100;
+    padding: 2px;
+    font-size: .9rem;
+    margin-left: 1rem;
+    color: black;
+    background-color: rgb(255, 234, 166);
+}
+.may::after{
+    content: 'MAYOR';
+    font-weight: 100;
+    padding: 2px;
+    font-size: .9rem;
+    margin-left: 1rem;
+    color: black;
+    background-color: rgb(213, 255, 166);
 }
