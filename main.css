@@ -5,6 +5,13 @@
     box-sizing: border-box;
     font-size: 100%;
 }
+body{
+    background-color: #111111;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+/*
 h1{
     color: ghostwhite;
     text-transform: uppercase;
@@ -17,17 +24,11 @@ p{
     color: #fff5e8;
 }
 h3{
-    color: gainsboro;
+    color: #dcdcdc;
     font-weight: 100;
     font-size: .7rem;
 }
-body{
-    background-color: #111111;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-.carnet{
+ .carnet{
     margin-top: 5%;
  width: max-content;
  height: fit-content;
@@ -48,10 +49,12 @@ img{
 .ext{
     color: #fad0bf;
     font-size: 2rem;
+    text-transform: uppercase;
 }
 .arg{
     color: #a2fff3;
     font-size: 2rem;
+    text-transform: uppercase;
 }
 .men::after{
     content: 'MENOR';   
@@ -70,4 +73,28 @@ img{
     margin-left: 1rem;
     color: black;
     background-color: rgb(213, 255, 166);
+} */
+h1{
+
+}
+h2{
+
+}
+h3{
+
+}
+p{
+    
+}
+.factura{
+    background-color: #fff8f0;
+    padding: 5px;
+    margin:auto;
+    width: 60vw;
+    max-height: 70%;
+    border: solid #111111 1px;
+    
+}
+.main{
+
 }

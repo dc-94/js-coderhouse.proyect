@@ -1,12 +1,28 @@
-let nombre = (prompt("¿Cual es tu Nombre y Apellido?"))
+let sum = 0;
+let terminar = true;
+let cant = 0;
+while(terminar != "no") {
+    // let item = prompt("Ingrese un item").toUpperCase()
+    let precio = parseInt(prompt("Ingrese el precio"))
+    sum += precio
+    terminar = prompt("¿Desea agregar mas items? ( SI / NO )").toLowerCase()
+}
+alert("El total es:" + /*item + " " +*/ " " + "$"+sum )
+let personas = parseInt(prompt("Ingrese cantidad de comensales"))
+let parte = (sum / personas)
+alert("El total es:" + " " + "$"+sum + " " +
+    "A cada persona le corresponde" + " " + "$"+parte)
+
+
+/*let nombre = (prompt("¿Cual es tu Nombre y Apellido?"))
 let nacimiento = parseFloat(prompt("¿En que año naciste?"))
 let edad = (2021 - nacimiento)
-let pais = (prompt("País de origen"))
+let pais = prompt("País de origen").toLocaleLowerCase()
 
 
 if (edad >= 18) {
         let edad = 'may'
-    if (pais == "argentina") {
+    if (pais == "argentina"){
         let nacionalidad = 'arg'
         // console.log("mayor y arg")
         document.write(`<div class="carnet">
@@ -62,3 +78,5 @@ if (edad >= 18) {
         </div>
     </div>`)    
 }
+*/
+
