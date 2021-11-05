@@ -4,14 +4,20 @@ let cant = 0;
 while(terminar != "no") {
     // let item = prompt("Ingrese un item").toUpperCase()
     let precio = parseInt(prompt("Ingrese el precio"))
+    
     sum += precio
-    terminar = prompt("¿Desea agregar mas items? ( SI / NO )").toLowerCase()
+    terminar = prompt("¿Desea agregar mas items? ( SI / NO )").toLowerCase();
 }
-alert("El total es:" + /*item + " " +*/ " " + "$"+sum )
-let personas = parseInt(prompt("Ingrese cantidad de comensales"))
-let parte = (sum / personas)
-alert("El total es:" + " " + "$"+sum + " " +
-    "A cada persona le corresponde" + " " + "$"+parte)
+document.write(`<p>El total es: <strong>$${sum}</strong></p>`)
+let dividir = prompt("¿Desea dividir la cuenta? (SI / NO").toLowerCase()
+// alert("El total es:" + /*item + " " +*/ " " + "$"+sum )
+if (dividir == 'si') {
+    let personas = parseInt(prompt("Ingrese cantidad de comensales"))
+    let parte = (sum / personas)
+    document.write(`<p class="sub">A cada persona le corresponde: <strong>$${parte}</strong></p>`)
+}
+// alert("El total es:" + " " + "$"+sum + " " +
+//     "A cada persona le corresponde" + " " + "$"+parte)
 
 
 /*let nombre = (prompt("¿Cual es tu Nombre y Apellido?"))

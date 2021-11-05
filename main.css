@@ -7,7 +7,6 @@
 }
 body{
     background-color: #111111;
-    display: flex;
     justify-content: center;
     align-content: center;
 }
@@ -78,13 +77,14 @@ h1{
 
 }
 h2{
-
 }
 h3{
 
 }
 p{
-    
+    font-size: 1rem;
+    color: #fff8f0;
+    font-weight: 500;
 }
 .factura{
     background-color: #fff8f0;
@@ -94,6 +94,12 @@ p{
     max-height: 70%;
     border: solid #111111 1px;
     
+}
+.sub{
+    font-size: .9rem;
+    color: #d4d4d4;
+    font-weight: 100;
+
 }
 .main{
 
