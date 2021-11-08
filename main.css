@@ -83,17 +83,25 @@ h3{
 }
 p{
     font-size: 1rem;
-    color: #fff8f0;
+    color: #131313;
     font-weight: 500;
+}
+.subtxt{
+    color: #111111;
+    font-weight: 100;
+    font-size: .8rem;
 }
 .factura{
     background-color: #fff8f0;
     padding: 5px;
     margin:auto;
-    width: 60vw;
-    max-height: 70%;
+    width: 90vw;
+    height: 90vh;
     border: solid #111111 1px;
-    
+    display: block;
+}
+.secc1{
+    display: flex;
 }
 .sub{
     font-size: .9rem;
