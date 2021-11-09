@@ -5,7 +5,9 @@ let IVA = 1.21
     const precio1 = () => parseInt(prompt("Ingrese un precio de producto"))
     const precio2 = () => parseInt(prompt("Ingrese un precio de producto"))
      //terminar = () => prompt("¿Desea agregar mas items? ( SI / NO )").toLowerCase();
+const resultadoNeto = (total) => console.log(`El total Neto es ${total}`)
     const final = (total) => total * IVA
-const resultado = (total,final) => console.log(`El total es ${total} y con iva ${final}`)
+const resultadoConIVA = (final) => console.log(`El total con iva es ${final}`)
 
-resultado(total(final(precio1(),precio2())))
+resultadoNeto(total(precio1(),precio2()))
+resultadoConIVA(final(total(precio1(),precio2())))
