@@ -1,3 +1,39 @@
+class Auto{ 
+    constructor(marca, modelo, puertas, precio){
+    this.marca = marca ;
+    this.modelo= modelo ;
+    this.puertas = puertas ;
+    this.precio = precio ;
+    }
+    aptoFlia(){
+        if((this.puertas) >= 5 ){
+            if(this.precio <= 3000000){
+            console.log(`${this.marca} ${this.modelo} es apto para tu familia`)
+            }else{
+                console.log(`${this.marca} ${this.modelo} es apto para tu familia...pero reee caro`)
+            }
+        }else{
+            if(this.precio <= 3000000){
+                console.log(`${this.marca} ${this.modelo} serviría si aún fueras soltero`)
+            }else{
+            console.log(`${this.marca} ${this.modelo} serviría si aún fueras soltero y tuvieras $$$`)
+
+            }
+        }
+    }
+}
+const auto1 = new Auto("Volkswagen", "Suran", 5, 1090000)
+const auto2 = new Auto("BMW", "X5", 5, 11980000)
+const auto3 = new Auto("Smart", "Fortwo", 2, 2000000)
+const auto4 = new Auto("Porsche", "911", 3, 25980000)
+const auto5 = new Auto(prompt("Marca del auto:"),prompt("Modelo:"), parseInt(prompt("Cantidad de puertas:")), parseInt(prompt("Precio:")))
+auto1.aptoFlia()
+auto2.aptoFlia()
+auto3.aptoFlia()
+auto4.aptoFlia()
+auto5.aptoFlia()
+
+/* 
 let sum = 0;
 let terminar = true;
 let cant = 0;
@@ -10,12 +46,14 @@ while(terminar != "no") {
 }
 document.write(`<p>El total es: <strong>$${sum}</strong></p>`)
 let dividir = prompt("¿Desea dividir la cuenta? (SI / NO").toLowerCase()
-// alert("El total es:" + /*item + " " +*/ " " + "$"+sum )
+
 if (dividir == 'si') {
     let personas = parseInt(prompt("Ingrese cantidad de comensales"))
     let parte = (sum / personas)
     document.write(`<p class="sub">A cada persona le corresponde: <strong>$${parte}</strong></p>`)
-}
+} */
+
+
 // alert("El total es:" + " " + "$"+sum + " " +
 //     "A cada persona le corresponde" + " " + "$"+parte)
 
