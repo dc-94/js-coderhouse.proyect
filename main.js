@@ -1,3 +1,26 @@
+class Note{
+    constructor(title, content, priority){
+        this.title = title
+        this.content = content
+        this.priority = priority
+    }
+    showNotes(){
+        return `
+        - ${this.title} 
+        - ${this.content} 
+        - ${this.priority}`
+    }
+}
+
+const nota1 = new Note("primera nota","Espero funcione", 4)
+const nota2 = new Note("second one","damn, I hate deadlines", 2)
+const nota3 = new Note(prompt("Ingrese titulo"), prompt("Ingrese texto"), parseInt(prompt("Ingrese prioridad: (1 a 5)")))
+function localSave(){
+    let toJSON = JSON.stringify(Note)
+    localStorage.setItem("note", toJSON)
+}
+localSave()
+/*
 class Auto{ 
     constructor(marca, modelo, puertas, precio){
     this.marca = marca ;
@@ -33,7 +56,6 @@ auto3.aptoFlia()
 auto4.aptoFlia()
 auto5.aptoFlia()
 
-/* 
 let sum = 0;
 let terminar = true;
 let cant = 0;
@@ -51,7 +73,7 @@ if (dividir == 'si') {
     let personas = parseInt(prompt("Ingrese cantidad de comensales"))
     let parte = (sum / personas)
     document.write(`<p class="sub">A cada persona le corresponde: <strong>$${parte}</strong></p>`)
-} */
+} 
 
 
 // alert("El total es:" + " " + "$"+sum + " " +
@@ -123,4 +145,3 @@ if (edad >= 18) {
     </div>`)    
 }
 */
-
