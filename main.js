@@ -29,5 +29,56 @@ function agregarVino(){
 }
 
 console.log(bodega)
+
+function localSave(){
+    let aJson = JSON.stringify(bodega)
+    localStorage.setItem("bodega",aJson)
+}
 agregarVino()
-console.log(bodega)
+saveLocal()
+//que desea hacer?
+function mainQuestion (){
+    let firstQ = prompt("Quiere agregar, buscar un vino ó consultar el catálogo? (A/B/C)")
+    if (firstQ.toLowerCase() == "A"){
+        agregarVino()
+
+    }else if(firstQ.toLowerCase() == "B"){
+        searchMethod()
+    }else{
+        alert("Podés consultar el catálogo en la consola y local Storage")
+    }
+}
+//como buscar?
+function searchMethod(){
+    let searchQ = prompt(" desea ordenar los productos por orden alfabetico (A) ó buscar por precio (P) o cosecha (C)?")
+    if (searchQ.toLowerCase() == "A"){
+        bodega.sort(function(a,b){
+            return a.nombre > b.nombre
+        })
+        console.log(bodega)
+
+    }else if(searchQ.toLowerCase() == "P"){
+        let valor = parseInt(prompt("ingrese un precio (490 a 3580)"))
+        let orden = prompt("desea buscar productos por debajo o sobre ese precio? ( < ó > )")
+        if (orden() == "<"){
+            console.log(bodega.filter(vino => vino.precio <= valor))
+        }else{
+            console.log(bodega.filter(vino => vino.precio >= valor))
+        }
+                
+    }else{
+        let valor = parseInt(prompt("ingrese un año (2013 a 2020)"))
+        let orden = prompt("desea buscar productos por debajo o sobre ese año de cosecha? ( < ó > )")
+        if (orden() == "<"){
+            console.log(bodega.filter(vino => vino.cosecha <= valor))
+        }else{
+            console.log(bodega.filter(vino => vino.cosecha >= valor))
+        }
+
+    }
+}
+//orden alfabetico
+
+//por precio > <
+
+//por cosecha
