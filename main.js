@@ -27,6 +27,11 @@ function localSave(){
     localStorage.setItem("bodega",aJson)
 }
 localSave()
+//leer JSON
+// function localRead(){
+//     let deJson= localStorage.getItem("bodega")
+//     const bodega = JSON.parse(deJson)
+//}
 //
 //pregunta si agregar mas o no
 function masVino(){
