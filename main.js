@@ -19,6 +19,29 @@ bodega.push(new Vino("Corte Argentino", "Malbec", "Francois Lurton", 2013, 3470)
 bodega.push(new Vino("Reserva", "Carmenere", "Cono Sur", 2018, 1450))
 bodega.push(new Vino("Reserva", "Cabernet Sauvignon", "Trivento", 2020, 490))
 
+//PENSARLO EN ATOMIC DESIGN !!!
+
+// guardar JSON
+function localSave(){
+    let aJson = JSON.stringify(bodega)
+    localStorage.setItem("bodega",aJson)
+}
+localSave()
+//
+//pregunta si agregar mas o no
+function masVino(){
+    let morewine = prompt("desea agregar mas vino? SI/NO").toLowerCase()
+    if(morewine == "si"){
+        agregarVino()
+        masVino()
+    }else if(morewine == "no"){
+        mainQuestion()
+    }else{
+     alert("Era SI o NO lo que tenias que responder!")   
+    }
+}
+//
+//agregar vino
 function agregarVino(){
     bodega.push(new Vino(prompt("Ingrese el nambre del vino"), prompt("Ingrese la cepa"), 
     prompt("Ingrese la bodega"), 
@@ -26,59 +49,65 @@ function agregarVino(){
     parseInt(prompt("Ingrese el precio"))
         )
     )
+    localSave()
+    console.log(bodega)
+    masVino()
 }
-
-console.log(bodega)
-
-function localSave(){
-    let aJson = JSON.stringify(bodega)
-    localStorage.setItem("bodega",aJson)
+//
+//orden alfabetico
+function ordenABC(){
+    bodega.sort(function(a,b){
+        return a.nombre > b.nombre
+    })
+    console.log(bodega)
 }
-agregarVino()
-saveLocal()
+//
+//por precio > <
+function searchPrecio(){
+    let valor = parseInt(prompt("ingrese un precio (490 a 3580)"))
+    let orden = prompt("desea buscar productos por debajo o sobre ese precio? ( < ó > )")
+    if (orden == "<"){
+        console.log(bodega.filter(vino => vino.precio <= valor))
+    }else if(orden == ">"){
+        console.log(bodega.filter(vino => vino.precio >= valor))
+    }else{
+        console.log("ingresaste un carácter no valido")
+    }
+}
+//
+//por cosecha
+function searchCosecha(){
+    let valor = parseInt(prompt("ingrese un año (2013 a 2020)"))
+    let orden = prompt("desea buscar productos por debajo o sobre ese año de cosecha? ( < ó > )")
+    if (orden == "<"){
+        console.log(bodega.filter(vino => vino.cosecha <= valor))
+    }else if(orden == ">"){
+        console.log(bodega.filter(vino => vino.cosecha >= valor))
+    }else{
+        console.log("ingresaste un carácter no valido")
+    }
+}
+//
+//como buscar?
+function searchMethod(){
+    let searchQ = prompt(" desea ordenar los productos por orden alfabetico (A) ó buscar por precio (P) o cosecha (C)?").toUpperCase()
+    if (searchQ == "A"){
+        ordenABC()
+    }else if(searchQ == "P"){
+        searchPrecio()
+    }else{
+        searchCosecha()
+    }
+}
 //que desea hacer?
-function mainQuestion (){
-    let firstQ = prompt("Quiere agregar, buscar un vino ó consultar el catálogo? (A/B/C)")
-    if (firstQ.toLowerCase() == "A"){
+function mainQuestion(){
+    let firstQ = prompt("Quiere agregar, buscar un vino ó consultar el catálogo? (A/B/C)").toUpperCase()
+    if (firstQ == "A"){
         agregarVino()
-
-    }else if(firstQ.toLowerCase() == "B"){
+    }else if(firstQ == "B"){
         searchMethod()
     }else{
         alert("Podés consultar el catálogo en la consola y local Storage")
     }
 }
-//como buscar?
-function searchMethod(){
-    let searchQ = prompt(" desea ordenar los productos por orden alfabetico (A) ó buscar por precio (P) o cosecha (C)?")
-    if (searchQ.toLowerCase() == "A"){
-        bodega.sort(function(a,b){
-            return a.nombre > b.nombre
-        })
-        console.log(bodega)
-
-    }else if(searchQ.toLowerCase() == "P"){
-        let valor = parseInt(prompt("ingrese un precio (490 a 3580)"))
-        let orden = prompt("desea buscar productos por debajo o sobre ese precio? ( < ó > )")
-        if (orden() == "<"){
-            console.log(bodega.filter(vino => vino.precio <= valor))
-        }else{
-            console.log(bodega.filter(vino => vino.precio >= valor))
-        }
-                
-    }else{
-        let valor = parseInt(prompt("ingrese un año (2013 a 2020)"))
-        let orden = prompt("desea buscar productos por debajo o sobre ese año de cosecha? ( < ó > )")
-        if (orden() == "<"){
-            console.log(bodega.filter(vino => vino.cosecha <= valor))
-        }else{
-            console.log(bodega.filter(vino => vino.cosecha >= valor))
-        }
-
-    }
-}
-//orden alfabetico
-
-//por precio > <
-
-//por cosecha
+mainQuestion()
