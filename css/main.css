@@ -1,0 +1,52 @@
+* {
+  font-size: 102%;
+  font-family: Raleway; }
+
+h1 {
+  font-size: 4rem;
+  word-wrap: break-word; }
+
+h2 {
+  font-family: Josefin Slab;
+  font-size: 1rem;
+  font-weight: 500;
+  word-wrap: normal; }
+
+h3 {
+  font-size: .8rem;
+  font-weight: 300;
+  word-break: break-all; }
+
+h4 {
+  font-size: .6rem; }
+
+body {
+  background-color: #fffbf9;
+  max-width: 1028px;
+  margin: auto; }
+
+.mainCards {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  .mainCards_card {
+    background-color: #fffffe;
+    width: 150px;
+    height: 310px;
+    padding: .5rem;
+    margin: .5rem;
+    border-radius: 8px;
+    overflow: hidden; }
+    .mainCards_card_img {
+      width: 140px;
+      max-height: 150px; }
+    .mainCards_card_txt {
+      padding: 3px;
+      height: fit-content;
+      align-content: space-between; }
+      .mainCards_card_txt_price {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0; }
