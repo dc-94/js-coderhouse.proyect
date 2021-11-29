@@ -13,10 +13,37 @@
     <title>proyecto</title>
 </head>
 <body>
+  <div class="filters">
+    <button id="abc" class="filters_each">Orden ABC</button>
+    <button id="addNew" class="filters_each">Añadir Producto</button>
+  </div>
+
+<div class="mainProductForm">
+  <form id="addProductForm" class="mainProductForm">
+      <label for="nombre" class="mainProductForm-label">Nombre</label>
+      <input type="text" class="mainProductForm-control" id="nombre" name="nombre" >
+        <label for="cepa" class="mainProductForm-label">cepa</label>
+        <input type="text" class="mainProductForm-control" id="cepa" name="cepa" >
+        <label for="bodega" class="mainProductForm-label">Bodega</label>
+        <input type="text" class="mainProductForm-control" id="bodega" name="bodega" >
+        <label for="img" class="mainProductForm-label">Img URL</label>
+        <input type="text" class="mainProductForm-control" id="img" name="img" >
+        <label for="cosecha" class="mainProductForm-label">Año</label>
+        <input type="number" class="mainProductForm-control" id="cosecha" name="cosecha" >
+        <label for="precio" class="mainProductForm-label">Precio</label>
+        <input type="number" class="mainProductForm-control" id="precio" name="precio" >
+    <button type="submit" id="formBtn" class="mainProductForm-btn">Agregar Item</button>
+    <button class="mainProductForm-btn-cancel">Cancelar</button>
+  </form>
+</div>
+
     <div class="mainCards" id="mainCards">
     
     </div>
+    
+
   <!-- <button id="addItem">Agregar producto</button> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="main.js" ></script>
 </body>
 </html>
