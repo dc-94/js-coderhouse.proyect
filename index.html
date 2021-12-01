@@ -8,18 +8,30 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100;0,300;0,500;0,700;1,100;1,300;1,500;1,700&family=Raleway:ital,wght@0,300;0,500;0,700;1,300;1,500;1,700&display=swap" rel="stylesheet">
+    <!-- ICONS -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
     
     <link rel="stylesheet" href="css/main.css">
     <title>proyecto</title>
 </head>
 <body>
+  <header>
+    <nav>
+      <a href="categoria.html" class="nav_link" id="navLink-vinos">Vinos</a>
+      <a href="categoria.html" class="nav_link" id="navLink-champ">Champagnes</a>
+      <a href="categoria.html" class="nav_link" id="navLink-destilados">Destilados</a>
+      <a href="categoria.html" class="nav_link" id="navLink-Otros">Delicatessen</a>
+    </nav>
+  </header>
   <div class="filters">
     <button id="abc" class="filters_each">Orden ABC</button>
     <button id="addNew" class="filters_each">Añadir Producto</button>
   </div>
-
-<div class="mainProductForm">
+<main>
+  <div class="mainProductForm">
   <form id="addProductForm" class="mainProductForm">
+      <label for="categ" class="mainProductForm-label">Categoría</label>
       <label for="nombre" class="mainProductForm-label">Nombre</label>
       <input type="text" class="mainProductForm-control" id="nombre" name="nombre" >
         <label for="cepa" class="mainProductForm-label">cepa</label>
@@ -35,12 +47,11 @@
     <button type="submit" id="formBtn" class="mainProductForm-btn">Agregar Item</button>
     <button class="mainProductForm-btn-cancel">Cancelar</button>
   </form>
-</div>
-
-    <div class="mainCards" id="mainCards">
-    
-    </div>
-    
+  </div>
+  <!-- productos -->
+  <div class="mainCards" id="mainCards">
+  </div>
+</main>
 
   <!-- <button id="addItem">Agregar producto</button> -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
