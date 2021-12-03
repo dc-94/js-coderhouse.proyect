@@ -25,13 +25,13 @@ body {
   max-width: 1028px;
   margin: auto; }
 
-.mainCards {
+.mainCards, .productCategCards {
   margin: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start; }
-  .mainCards_card {
+  .mainCards_card, .productCategCards_card {
     background-color: #fffffe;
     width: 150px;
     height: 310px;
@@ -39,16 +39,16 @@ body {
     margin: .5rem;
     border-radius: 8px;
     overflow: hidden; }
-    .mainCards_card_img {
+    .mainCards_card_img, .productCategCards_card_img {
       width: 140px;
       max-height: 150px; }
-    .mainCards_card_txt {
+    .mainCards_card_txt, .productCategCards_card_txt {
       padding: 3px;
       height: fit-content;
       align-content: space-between; }
-      .mainCards_card_txt_productName {
+      .mainCards_card_txt_productName, .productCategCards_card_txt_productName {
         text-transform: capitalize; }
-      .mainCards_card_txt_price {
+      .mainCards_card_txt_price, .productCategCards_card_txt_price {
         font-size: 1.1rem;
         font-weight: 700;
         margin-bottom: 0; }

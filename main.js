@@ -1,20 +1,21 @@
 let bodegaV = []
-mainFiltro = []
 //card productos
 let mainCards = document.getElementById("mainCards")
-let productCategCards = document.getElementById('productCategCards')
 //botones
 let addProduct = document.getElementById("addNew")
 let cancelAdd = document.querySelector(".mainProductForm-btn-cancel")
+let filtrarV = document.getElementById('navLink-vinos')
+let filtrarC = document.getElementById('navLinks-champ')
+let filtrarD = document.getElementById('navLinks-dest')
+let filtrarDeli = document.getElementById('navLinks-deli')
 //formulario
 let addProductForm = document.getElementById("addProductForm")
 //filtros
 let ordenABC = document.getElementById('abc')
 
-let filtrarV = getElementById('navLinks-vinos')
 
 class Vino {
-    constructor(nombre, cepa, bodega,img, cosecha, precio){
+    constructor(categ, nombre, cepa, bodega,img, cosecha, precio){
     this.categ = categ
     this.nombre = nombre
     this.cepa = cepa
@@ -26,6 +27,7 @@ class Vino {
 }
 
 
+bodegaV.push(new Vino("champagne","cuvee Exceptionnelle", "Blanc de Blancs","Salentein","https://cepadevinos.com/wp-content/uploads/2016/09/Espumante-Salentein-Blanc-de-Blancs-Fullbody.png","n/a", 950))
 bodegaV.push(new Vino("vinos","carpe Diem", "Pinot Noir","La Espera","https://mly1ygebnr2t.i.optimole.com/ScIDir0.w5KU~57308/w:600/h:600/q:89/https://vinotecaleneas.com/wp-content/uploads/2020/11/La-Espera-Carpe-Diem-Pinot-Noir.jpg",2018, 780))
 bodegaV.push(new Vino("vinos","mas Janeil Le Petit Pas", "Grenache Noir / Syrah / Carignan / Mourvedre", "Francois Lurton","https://images.vivino.com/thumbs/P6vDe0gcTJCVrTwGofbMzg_pb_600x600.png", 2016, 2120))
 bodegaV.push(new Vino("vinos","monteagrelo", "Cabernet Franc", "Bressia","https://images.vivino.com/thumbs/4Ug9g_psSOejUXKDVSt4TA_pl_375x500.png", 2019, 2200))
@@ -40,13 +42,9 @@ bodegaV.push(new Vino("vinos","trivento Reserva", "Cabernet Sauvignon", "Trivent
 // guardar JSON
 function localSave(){
     let aJson = JSON.stringify(bodegaV)
-    localStorage.setItem("bodegaV",aJson)
+    localStorage.setItem("bodega",aJson)
 }
-//leer JSON
-function localRead(){
-    let deJson= localStorage.getItem("bodegaV")
-    const bodegaV = JSON.parse(deJson)
-}
+
 
 
 //mostrar productos cargados
@@ -65,8 +63,8 @@ showCatalog = () => {
         </div>
         `
     })
-}
-    showCatalog()
+ }
+ 
 
 //agregar vino
  addProductForm.addEventListener('submit',(e) =>{
@@ -81,7 +79,7 @@ showCatalog = () => {
     let precio = document.getElementById('precio').value
 
     bodegaV.push(new Vino(categ,nombre, cepa,bodeg,img,cosecha,precio))
-
+    localSave()
     addProductForm.reset()
     mainCards.innerHTML=""
     showCatalog()
@@ -106,22 +104,16 @@ addProduct.onclick = () =>{
 cancelAdd.onclick = () =>{
     hide()
 }
-
+// mostrar formulario
 show = () =>{
     let layout=document.querySelector(".mainProductForm")
     layout.style.display="block"
 }
+//ocultar formulario
 hide = () =>{
     let layout=document.querySelector(".mainProductForm")
     layout.style.display="none"
 }
-filtroVinos = ()=>{
-    let categoria = bodegaV.filter(bodegaV=>bodegaV.categ == 'vinos')
-    mainFiltro = categoria
-}
 
-filtrarV.onclick=() =>{
-    filtroVinos() 
-}
-
-deJson
+localSave()
+showCatalog()
