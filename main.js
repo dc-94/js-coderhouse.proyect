@@ -2,8 +2,6 @@ let bodegaV = []
 //card productos
 let mainCards = document.getElementById("mainCards")
 //botones
-let addProduct = document.getElementById("addNew")
-let cancelAdd = document.querySelector(".mainProductForm-btn-cancel")
 let filtrarV = document.getElementById('navLink-vinos')
 let filtrarC = document.getElementById('navLinks-champ')
 let filtrarD = document.getElementById('navLinks-dest')
@@ -67,29 +65,41 @@ showCatalog = () => {
  
 
 //agregar vino
- addProductForm.addEventListener('submit',(e) =>{
-     e.preventDefault()
-     console.log(e.target)
-    let categ = document.getElementById('categ').value.toLowerCase()
-    let nombre = document.getElementById('nombre').value.toLowerCase()
-    let cepa = document.getElementById('cepa').value.toLowerCase()
-    let bodeg = document.getElementById('bodega').value.toLowerCase()
-    let img = document.getElementById('img').value
-    let cosecha = document.getElementById('cosecha').value
-    let precio = document.getElementById('precio').value
+//  addProductForm.addEventListener('submit',(e) =>{
+//      e.preventDefault()
+//      console.log(e.target)
+//     let categ = document.getElementById('categ').value.toLowerCase()
+//     let nombre = document.getElementById('nombre').value.toLowerCase()
+//     let cepa = document.getElementById('cepa').value.toLowerCase()
+//     let bodeg = document.getElementById('bodega').value.toLowerCase()
+//     let img = document.getElementById('img').value
+//     let cosecha = document.getElementById('cosecha').value
+//     let precio = document.getElementById('precio').value
 
-    bodegaV.push(new Vino(categ,nombre, cepa,bodeg,img,cosecha,precio))
-    localSave()
-    addProductForm.reset()
-    mainCards.innerHTML=""
-    showCatalog()
-    hide()
-}) 
+//     bodegaV.push(new Vino(categ,nombre, cepa,bodeg,img,cosecha,precio))
+//     localSave()
+//     addProductForm.reset()
+//     mainCards.innerHTML=""
+//     showCatalog()
+//     hide()
+// }) 
+$(()=>{
+    $('#addProductForm').submit((e) =>{
+        e.preventDefault()
+        let formDat = new FormData(e.target)
+        let newItem = new Vino(formDat.get("categ"),formDat.get("nombre"),formDat.get("cepa"),formDat.get("bodega"),formDat.get("img"),formDat.get("cosecha"),formDat.get("precio"))
+        bodegaV.push(newItem)
+        $('#addProductForm').trigger("reset")
+       mainCards.innerHTML=""
+        showCatalog()
+        hide()
+    })
+})
 
 //orden alfabetico
-ordenABC.onclick= () => {
+$('#abc').click(() => {
     ordenABC()
-}
+})
 
 ordenABC = () => {
     bodegaV.sort(function(a,b){
@@ -98,12 +108,12 @@ ordenABC = () => {
     mainCards.innerHTML=""
     showCatalog()
 }
-addProduct.onclick = () =>{
+$('#addNew').click(()=>{
     show()
-}
-cancelAdd.onclick = () =>{
+})
+$('.mainProductForm-btn-cancel').click (() =>{
     hide()
-}
+})
 // mostrar formulario
 show = () =>{
     let layout=document.querySelector(".mainProductForm")
