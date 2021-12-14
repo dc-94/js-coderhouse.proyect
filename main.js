@@ -127,3 +127,19 @@ hide = () =>{
 
 localSave()
 showCatalog()
+
+$(".mainCards_card").mouseenter(function(){
+    $(this).animate({
+        height: "315px",
+        margin:".3rem",
+        borderRadius:"12px"
+//        boxShadow: "0px 0px 30px #44f"
+        }, 100)
+}).mouseleave(function(){
+    $(this).animate({ 
+        height: "310px",
+        margin:".5rem",
+        borderRadius:"8px"
+//        boxShadow: "0px 0px 10px #fff"
+    }, 80);
+});
