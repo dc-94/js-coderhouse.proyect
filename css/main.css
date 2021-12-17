@@ -25,6 +25,28 @@ body {
   max-width: 1028px;
   margin: auto; }
 
+header {
+  height: 60px;
+  margin-bottom: .5rem;
+  width: 100%; }
+  header .nav {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1028px;
+    margin: auto;
+    padding: .5rem; }
+    header .nav img {
+      height: 50px;
+      width: auto; }
+    header .nav .nav_menu {
+      align-self: center; }
+      header .nav .nav_menu a {
+        padding: 0 .5rem;
+        text-decoration: none;
+        color: orangered; }
+        header .nav .nav_menu a:hover {
+          color: #a85a3d; }
+
 .mainCards, .productCategCards {
   margin: 1rem;
   display: flex;
@@ -39,6 +61,8 @@ body {
     margin: .5rem;
     border-radius: 8px;
     overflow: hidden; }
+    .mainCards_card:hover, .productCategCards_card:hover {
+      box-shadow: 0px 0px 8px #fcc0aa36; }
     .mainCards_card_img, .productCategCards_card_img {
       width: 140px;
       max-height: 150px; }
