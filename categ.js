@@ -1,14 +1,14 @@
 mainFiltro = []
-let identCat 
 let back = document.getElementById('volver')
 let productCategCards = document.getElementById('productCategCards')
 
 //leer JSON
-    let deJson = localStorage.getItem('bodega')
-    const bodegaV1 = JSON.parse(deJson)
+let deJson = localStorage.getItem('bodega')
+const bodegaV1 = JSON.parse(deJson)
 
+let categoriaActual = 
 //identificar categorias
-   var categoriaActual = "vinos"
+   //var categoriaActual = "champagne"
    
 /*filtrarC.onclick= () => {
    identCat = "champagne"
@@ -43,10 +43,16 @@ productosFiltrados = () => {
 
 }
 
-volver.onclick= () =>{
-    localStorage.removeItem('bodega')
-}
 
 filtro()
  localSave()
  productosFiltrados()
+
+
+$(document).ready(function () {
+    $('#back').click(function (e) {
+        e.preventDefault()
+        window.history.back()
+    });
+});
+console.log(categFilter)

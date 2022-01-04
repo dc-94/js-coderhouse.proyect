@@ -15,5 +15,18 @@
             </div>
         </div>
             `
+            console.log(product.nombre)
         });
     })
+
+    $(document).ready(function() {
+        // on click
+        $('#back').click(function(e){
+          // prevent default behavior
+          e.preventDefault();
+          // Go back 1 page 
+          window.history.back();
+          // can also use 
+          // window.history.go(-1);
+        });
+      });

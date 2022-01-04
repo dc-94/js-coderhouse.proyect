@@ -12,33 +12,46 @@
 
     
     <link rel="stylesheet" href="css/main.css">
-    <title>Categoria</title>
+    <title id="fileProdTitle"></title>
 </head>
 <body>
   <header>
     <nav class="nav">
       <div class="nav_logo">
-        <img  src="../img/logo-_Mesa de trabajo 1 copia 3.svg" alt="dingo delicatessen deli'very logo">
+        <img  src="img/logo-_Mesa de trabajo 1 copia 3.svg" alt="dingo delicatessen deli'very logo">
       </div>
       <div class="nav_menu">
         <a href="categoria.html" class="nav_link" id="navLink-vinos">Vinos</a>
         <a href="categoria.html" class="nav_link" id="navLink-champ">Champagnes</a>
         <a href="categoria.html" class="nav_link" id="navLink-dest">Destilados</a>
         <a href="categoria.html" class="nav_link" id="navLink-deli">Delicatessen</a>
+        
       </div>
+      
     </nav> 
   </header>
-    
-    <button id="back">back</button>
-    <h1 id="categTitle"></h1>
-    <div id="productCategCards" class="productCategCards">
-
+<main>
+  <div id="mainProduct" class="mainProduct">
+    <div class="mainProduct_img">
+      <img src="/img/logo.svg" alt="">
     </div>
+    <div class="mainProduct_txt">
+      <div class="mainProduct_txt_title">
+        <h1 class="mainProduct_txt_title-product">Lorem ipsum dolor sit.</h1>
+        <h4 class="mainProduct_txt_title-vendor">Vendido por: <span class="txt-dark">Lorem, ipsum.</span></h4>
+      </div>
+      <div class="mainProduct_txt_info">
+        <p class="mainProduct_txt_info-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente, dolore?</p>
+        <p class="mainProduct_txt_info-cont">Presentación: <span class="txt-dark">gr/cc</span></p>
+      </div>
+      <button class="mainProduct_txt">Consultar</button>
+    </div>
+  </div>
+</main>
+    
 
-
-    <!-- JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="main.js" ></script>
-    <script src="categ.js" ></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- <script src="//cdn.jsdelivr.net/jquery.shadow-animation/1/mainfile"></script> -->
+<script src="main.js" ></script>
 </body>
 </html>
